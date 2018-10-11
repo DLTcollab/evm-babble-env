@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "commander": "^2.19.0",
     "json-bigint": "^0.2.3",
     "minimist": "^1.2.0",
     "prompt": "^1.0.0",
