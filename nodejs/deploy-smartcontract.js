@@ -59,16 +59,17 @@ function DemoNode(name, host, port) {
 //------------------------------------------------------------------------------
 
 var _demoNodes = [];
-var _contractFile = 'Token.sol';
+var _contractFile = '';
 var _cfContract;
-var _keystore = 'keystore';
-var _pwdFile = 'pwd.txt';
+var _keystore = '';
+var _pwdFile = '';
 
 init = function() {
     console.log(argv);
     var ips = argv.ips.split(",");
     var port = argv.port;
-    _contractFile = argv.contract;
+    _contractName = argv.contractName;
+    _contractFile = argv.contractPath;
     _keystore = argv.keystore;
     _pwdFile = argv.pwd;
 
@@ -171,7 +172,7 @@ init()
 
 .then(() => { space(); return getControlledAccounts()})
 
-.then(() => { space(); return deployContract(_demoNodes[0], _contractFile, 'Token', [1000])})
+.then(() => { space(); return deployContract(_demoNodes[0], _contractFile, _contractName, [1000])})
 .then((contract) => { return new Promise((resolve) => { _cfContract = contract; resolve();})})
 
 .catch((err) => log(FgRed, err))
