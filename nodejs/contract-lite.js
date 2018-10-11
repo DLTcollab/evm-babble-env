@@ -17,7 +17,9 @@ function Contract(file, name) {
 Contract.prototype.compile = function() {
     input = fs.readFileSync(this.file)
     output = solc.compile(input.toString(), 1)
-    console.log('compile output', output)
+    console.log("---------Samrt Contarct Compile Output-----------" + 
+                "\n" , output, "\n" +
+                "---------Samrt Contarct Compile Output-----------")
     this.bytecode =  output.contracts[this.name].bytecode
     this.abi = output.contracts[this.name].interface
     this.w3 = web3.eth.contract(JSONbig.parse(this.abi)).at('');

@@ -7,12 +7,7 @@ var EVMBabbleClient = function(host, port) {
 
 request = function(options, callback) {
     return http.request(options, (resp) => {
-        log(FgYellow, util.format('%s %s:%s%s', 
-        options.method, 
-        options.host,
-        options.port,
-        options.path));
-
+        
         let data = '';
         
         // A chunk of data has been recieved.
