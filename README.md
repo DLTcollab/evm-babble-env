@@ -1,3 +1,5 @@
+Deprecated in favor of [evm-lite-env](https://github.com/DLTcollab/evm-lite-env)
+
 # EVM Babble Environment
 Deploy environment for running evm-babble
 
